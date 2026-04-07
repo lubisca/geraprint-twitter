@@ -18,21 +18,17 @@ document.getElementById('download').addEventListener('click', () => {
   const target = document.getElementById('capture');
   const btn = document.getElementById('download');
   
-  btn.innerText = "Processando...";
+  btn.innerText = "Gerando...";
   
   html2canvas(target, { 
-    useCORS: true, 
-    allowTaint: true,
-    backgroundColor: "#ffffff",
-    scale: 3 // Resolução HD
+    useCORS: true,
+    scale: 3,
+    backgroundColor: null 
   }).then(canvas => {
     const link = document.createElement('a');
-    link.download = `insta-post-${Date.now()}.png`;
+    link.download = `geraprint-${Date.now()}.png`;
     link.href = canvas.toDataURL("image/png");
     link.click();
-    btn.innerText = "Baixar Imagem para o Insta";
-  }).catch(err => {
-    btn.innerText = "Erro ao baixar";
-    console.error("Erro no html2canvas:", err);
+    btn.innerText = "Baixar Imagem";
   });
 });
