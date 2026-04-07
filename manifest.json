@@ -1,8 +1,11 @@
 {
   "manifest_version": 3,
   "name": "GeraPrint Twitter",
-  "version": "2.1",
-  "permissions": ["storage", "activeTab"],
+  "version": "3.0",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
   "background": {
     "service_worker": "background.js"
   },
